@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>tampilan data</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col mt-5">
+          <form class="d-flex justify-content-center">
+            <input type="text" placeholder="Search..." name="search" autofocus />
+            <button class="btn btn-primary ms-2" type="submit">Cari</button>
+          </form>
+          <table class="table table-bordered mt-5">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Warna Mata</th>
+                <th scope="col">Jenis Kelamin</th>
+                <th scope="col">Perusahaan</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Buah Faforit</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Registrasi</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if(datas.length ==0){ %>
+              <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                data tidak ada
+                <a href="/data"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></a>
+              </div>
+              <% }%> <% let i =1 %> <% datas.forEach((data)=>{%>
+              <tr>
+                <th scope="row"><%= i++ %></th>
+                <td><%= data.name %></td>
+                <td><%= data.age %></td>
+                <td><%= data.eyeColor %></td>
+                <td><%= data.gender %></td>
+                <td><%= data.company %></td>
+                <td><%= data.email %></td>
+                <td><%= data.phone %></td>
+                <td><%= data.favoriteFruit %></td>
+                <td><%= data.address %></td>
+                <td><%= data.registered %></td>
+                <td><%=data.isActive %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+  </body>
+</html>
